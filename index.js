@@ -230,15 +230,24 @@ console.log(artists[8].name)
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
 
-/*const message = `The artist at index ${index} is ${[index].name}.`
 
-function getArtistByIndex(artists, index){
 
-    console.log(message); 
+
+
+function getArtistByIndex(arr, str){
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].includes(str)) {
+      newArr.push(arr[i]);
+    }
+  }
+    return newArr;
+     
   }
 
-     
- console.log(getArtistByIndex(artists, 0)) */
+const  message = `The artist at index ${i} is ${[i].name}.`
+
+console.log(message) 
 
   /**
 
