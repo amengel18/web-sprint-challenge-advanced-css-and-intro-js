@@ -229,10 +229,17 @@ console.log(artists[8].name)
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-function getArtistByIndex(array, index) {
-    /* code here */
+
+/*const message = `The artist at index ${index} is ${[index].name}.`
+
+function getArtistByIndex(artists, index){
+
+    console.log(message); 
   }
-  
+
+     
+ console.log(getArtistByIndex(artists, 0)) */
+
   /**
 
 
@@ -255,11 +262,17 @@ function get20s(/* Code here */){
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(artists, index) {
+  for (var i = 0; i < artists.length; i++){
+    if (artists[i] === index){
+        artists.splice(i,i);{
+          console.log(artists);
+        }   
+    }
+  }
   }
   
- 
+ removeArtist(artists, 0)
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
@@ -274,7 +287,7 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/* Code here */){
+function addArtist(artists, ){
 
     /* Code here */
 
