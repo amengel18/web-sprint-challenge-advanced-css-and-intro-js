@@ -322,6 +322,8 @@ At the end, this function should return the new array with information added"*/
     "bio": "Mom of 3 kids, that are involved in lots of activites. Great at multitasking.",
   }) 
 
+  addArtist(artists, newArtist)
+
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
     (1) artists array 
