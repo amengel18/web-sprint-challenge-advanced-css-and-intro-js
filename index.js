@@ -250,21 +250,22 @@ console.log(getArtistByIndex(artists,0))
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-   function get20s(arr,str){
+  function get20s(artists, century){
 
-  let newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].includes(str)) {
-      newArr.push(arr[i]);
-    }
+  const filtered = [];
+  for (let i = 0; i < artists.length; i++) {
+    let birth = artists[i].years.substring(0,4)
+    let death = artists[i].years.substring(7,11)
+    if (birth >= century)
+      filtered.push(artists[i]);
+    
   }
-    return newArr;
+    return filtered;
      
 
 }
+get20s(artists, '1900') 
 
-const twentithCentury = get20s(arr,'1900-2000');
-    console.log(twentithCentury); 
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -278,13 +279,8 @@ const twentithCentury = get20s(arr,'1900-2000');
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
   function removeArtist(artists, index) {
-  for (var i = 0; i < artists.length; i++){
-    if (artists[i] === index){
-        artists.splice(i,i);
-          console.log(artists);
-          
-    }
-  }
+  
+        return artists.splice(index, 1);
   }
   
  console.log(removeArtist(artists, 0))  
@@ -310,12 +306,12 @@ At the end, this function should return the new array with information added"*/
   }
 
   const newArtist = ( {
-    "id": "20",
-    "name": "Angela Engel",
-    "years": "1988 - present",
-    "genre": "Web Design",
-    "nationality": "Hispanic",
-    "bio": "Mom of 3 kids, that are involved in lots of activites. Great at multitasking.",
+    id: 20,
+    name: 'Angela Engel',
+    years: '1988 - present',
+    genre: 'Web Design',
+    nationality: 'Hispanic',
+    bio: 'Mom of 3 kids, that are involved in lots of activites. Great at multitasking.',
   }) 
 
   addArtist(artists, newArtist)
@@ -328,20 +324,19 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(artists,str){
+function lotsOfArt(artists, number){
   let newArr = [];
-  for (let i = 100; i < artists.length; i++) {
-    if (artists[i].includes(str)) {
+  for (let i = 0; i < artists.length; i++) {
+    if (artists[i].paintings > number) {
       newArr.push(artists[i]);
     }
   }
     return newArr;
 }
 
-const manyPaintings = lotsOfArt(artists,str);
 
-console.log(manyPaintings)
 
+console.log(lotsOfArt(artists, 100))
 // 🎨🎨 STRETCH 🎨🎨//
 
 
